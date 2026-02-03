@@ -2,93 +2,160 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>GTLAquatics | Betta Breeding, Fry Care, Tank Setup</title>
-  <meta name="description" content="GTLAquatics is a complete knowledge hub for betta breeding, fry care, tank setup, feeding schedules, and fishkeeping success.">
+  <title>GTLAquatics | Ultimate Betta Breeding Guide</title>
+  <meta name="description" content="Master betta breeding with our all-in-one guide: fry care, tank setup, feeding, genetics, videos, and product recommendations for success.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="betta breeding, betta fry care, betta tank setup, betta feeding schedule, betta genetics, aquarium fish breeding">
 
   <!-- SEO + AI Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Dataset",
-    "name": "GTLAquatics Betta Breeding Knowledge Base",
-    "description": "Structured reference data for betta breeding, fry care, feeding schedules, tank setup, and genetics.",
-    "creator": {
-      "@type": "Organization",
-      "name": "GTLAquatics"
-    },
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "keywords": ["betta breeding", "betta fry care", "betta tank setup", "betta feeding schedule", "aquarium fish breeding"],
-    "inLanguage": "en"
+    "@type": "HowTo",
+    "name": "How to Breed Betta Fish",
+    "description": "Comprehensive guide to breeding betta fish, including setup, care, feeding, and genetics.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Choose a Compatible Pair",
+        "text": "Select healthy bettas aged 4-12 months and condition them."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Prepare the Tank",
+        "text": "Set up a 5-10 gallon tank with optimal parameters."
+      }
+    ],
+    "supply": [
+      {
+        "@type": "HowToSupply",
+        "name": "Breeding Tank"
+      },
+      {
+        "@type": "HowToSupply",
+        "name": "Heater"
+      }
+    ],
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "Thermometer"
+      }
+    ],
+    "image": "https://example.com/betta-breeding.jpg",
+    "video": {
+      "@type": "VideoObject",
+      "name": "Betta Breeding Tutorial",
+      "description": "Step-by-step video guide.",
+      "thumbnailUrl": "https://example.com/thumbnail.jpg",
+      "contentUrl": "https://www.youtube.com/watch?v=example",
+      "embedUrl": "https://www.youtube.com/embed/example"
+    }
+  }
+  </script>
+
+  <!-- Additional FAQ Schema for AI/SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long does it take betta eggs to hatch?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Betta eggs typically hatch within 24 to 48 hours under stable water temperatures of 80 to 86°F."
+        }
+      }
+    ]
   }
   </script>
 
   <style>
     :root {
-      --primary: #1b4f72;
-      --accent: #ff6f61;
-      --background: #f2f8fa;
+      --primary: #0a3d62; /* Deeper blue for elegance */
+      --accent: #ff4757; /* Vibrant coral for pops of energy */
+      --background: #f0f4f8; /* Soft, clean background */
       --card: #ffffff;
+      --text: #2d3436;
+      --highlight: #ffeaa7;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-family: 'Inter', system-ui, sans-serif;
       background: var(--background);
-      color: var(--primary);
-      line-height: 1.7;
+      color: var(--text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header {
-      background: linear-gradient(to right, #1b4f72, #3b7ea1);
+      background: linear-gradient(135deg, var(--primary), #2980b9);
       color: white;
-      padding: 48px 20px;
+      padding: 80px 20px 60px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://source.unsplash.com/random/1600x900/?aquarium,betta') no-repeat center/cover;
+      opacity: 0.15;
     }
 
     header h1 {
-      margin: 0;
-      font-size: clamp(2rem, 5vw, 3rem);
-      letter-spacing: 1px;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+      position: relative;
     }
 
     header p {
-      max-width: 720px;
-      margin: 16px auto 0;
+      max-width: 800px;
+      margin: 0 auto;
       font-size: 1.2rem;
-      opacity: 0.95;
+      opacity: 0.9;
+      position: relative;
     }
 
     nav {
       position: sticky;
       top: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
       z-index: 1000;
-      background: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
 
     nav ul {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
       list-style: none;
-      padding: 12px;
-      margin: 0;
-      gap: 12px;
+      padding: 16px;
+      gap: 16px;
     }
 
     nav a {
       color: var(--primary);
-      font-weight: 600;
       text-decoration: none;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: #eef6fa;
-      transition: all 0.2s ease;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
     }
 
     nav a:hover {
@@ -97,136 +164,198 @@
     }
 
     main {
-      max-width: 1100px;
-      margin: auto;
+      max-width: 1200px;
+      margin: 0 auto;
       padding: 40px 20px;
     }
 
     section {
-      margin-bottom: 80px;
-      scroll-margin-top: 120px;
+      margin-bottom: 60px;
+      scroll-margin-top: 100px;
     }
 
     h2 {
-      font-size: clamp(1.6rem, 4vw, 2.2rem);
-      margin-bottom: 16px;
-      border-bottom: 3px solid var(--accent);
-      display: inline-block;
-      padding-bottom: 6px;
-    }
-
-    h3 {
-      margin-top: 28px;
-      margin-bottom: 8px;
-    }
-
-    p {
-      font-size: 1.05rem;
-      margin-bottom: 16px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
-    .card {
-      background: var(--card);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      font-size: clamp(2rem, 4vw, 2.5rem);
       margin-bottom: 24px;
+      color: var(--primary);
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60%;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    .accordion {
+      margin-bottom: 16px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .accordion-summary {
+      background: var(--card);
+      padding: 16px 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: var(--primary);
+      transition: background 0.2s;
+    }
+
+    .accordion-summary:hover {
+      background: #f8fbfe;
+    }
+
+    .accordion-content {
+      background: var(--card);
+      padding: 0 20px 20px;
+      display: none;
+    }
+
+    .accordion.active .accordion-content {
+      display: block;
+    }
+
+    .accordion-icon {
+      font-size: 1.2rem;
+      transition: transform 0.3s;
+    }
+
+    .accordion.active .accordion-icon {
+      transform: rotate(45deg);
     }
 
     .highlight {
-      background: #fff6f3;
-      border-left: 5px solid var(--accent);
+      background: var(--highlight);
+      border-left: 4px solid var(--accent);
       padding: 16px;
       border-radius: 8px;
       margin: 20px 0;
+      font-style: italic;
     }
 
     table {
       width: 100%;
-      border-collapse: collapse;
-      margin: 16px 0;
-      background: white;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 24px 0;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
     }
 
     th, td {
-      padding: 12px 14px;
-      border-bottom: 1px solid #e6eef3;
+      padding: 14px 16px;
       text-align: left;
+      border-bottom: 1px solid #e9ecef;
     }
 
     th {
-      background: #eef6fa;
+      background: #f1f6fa;
       font-weight: 700;
+      color: var(--primary);
     }
 
-    .cta {
-      display: inline-block;
-      margin-top: 12px;
+    .product-cta {
+      display: inline-flex;
+      align-items: center;
       background: var(--accent);
       color: white;
-      padding: 14px 26px;
-      border-radius: 999px;
-      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 50px;
       text-decoration: none;
-      transition: background 0.2s ease;
+      font-weight: 600;
+      margin-top: 16px;
+      transition: transform 0.2s, background 0.2s;
     }
 
-    .cta:hover {
-      background: #e65a4f;
+    .product-cta:hover {
+      background: #e84150;
+      transform: translateY(-2px);
     }
 
-    .youtube-grid {
+    .video-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
 
     iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: 200px;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      height: 100%;
+    }
+
+    .video-caption {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 0.95rem;
+      color: #636e72;
     }
 
     footer {
-      background: #1b4f72;
+      background: var(--primary);
       color: white;
       text-align: center;
       padding: 40px 20px;
+      margin-top: 60px;
     }
 
-    footer p {
-      margin: 8px 0;
-      opacity: 0.9;
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* JavaScript-enabled enhancements */
+    @media (prefers-reduced-motion: no-preference) {
+      section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+
+      section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>GTLAquatics</h1>
-  <p>Your complete reference for betta breeding, fry survival, tank setup, and fishkeeping success</p>
+  <h1>GTLAquatics: Master Betta Breeding</h1>
+  <p>Your streamlined, all-in-one resource for betta breeding success. From setup to fry care, genetics, and beyond – with expert videos and product recommendations.</p>
 </header>
 
 <nav>
   <ul>
-    <li><a href="#breeding">Breeding Guide</a></li>
+    <li><a href="#breeding">Breeding</a></li>
     <li><a href="#fry-care">Fry Care</a></li>
     <li><a href="#tank-setup">Tank Setup</a></li>
-    <li><a href="#feeding">Feeding Schedule</a></li>
+    <li><a href="#feeding">Feeding</a></li>
     <li><a href="#genetics">Genetics</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#videos">Videos</a></li>
@@ -235,232 +364,302 @@
 
 <main>
 
-  <!-- BREEDING GUIDE -->
   <section id="breeding">
-    <h2>How to Breed Betta Fish Successfully</h2>
-    <div class="card">
-      <p>Breeding betta fish requires preparation, conditioning, and environmental control. This guide covers the entire process from pairing to fry care with high survival rates.</p>
+    <h2>How to Breed Betta Fish</h2>
+    <p>Breeding bettas is an art and science. Follow these steps for high success rates, integrated with video tutorials and product links.</p>
 
-      <h3>Step 1 Choose a Compatible Pair</h3>
-      <ul>
-        <li>Select healthy bettas aged 4 to 12 months</li>
-        <li>Condition both fish with protein-rich foods for 1 to 2 weeks</li>
-        <li>Watch for flaring, color deepening, and female vertical bars</li>
-      </ul>
+    <div class="accordion">
+      <div class="accordion-summary">Step 1: Choose a Compatible Pair <span class="accordion-icon">+</span></div>
+      <div class="accordion-content">
+        <ul>
+          <li>Select healthy bettas aged 4-12 months.</li>
+          <li>Condition with protein-rich foods for 1-2 weeks.</li>
+          <li>Look for flaring, color changes, and female bars.</li>
+        </ul>
+        <div class="highlight">Pro Tip: Healthy pairs increase spawn viability by 50%.</div>
+        <a href="https://www.amazon.com/s?k=betta+conditioning+food" target="_blank" class="product-cta">Shop Conditioning Foods</a>
+      </div>
+    </div>
 
-      <h3>Step 2 Prepare the Breeding Tank</h3>
-      <ul>
-        <li>Tank size 5 to 10 gallons</li>
-        <li>Water temperature 80 to 86 degrees Fahrenheit</li>
-        <li>Water depth 5 to 6 inches</li>
-        <li>No gravel or strong filtration</li>
-        <li>Add floating plants or a leaf for bubble nest anchoring</li>
-      </ul>
+    <div class="accordion">
+      <div class="accordion-summary">Step 2: Prepare the Breeding Tank <span class="accordion-icon">+</span></div>
+      <div class="accordion-content">
+        <ul>
+          <li>5-10 gallon tank.</li>
+          <li>80-86°F temperature.</li>
+          <li>5-6 inches water depth.</li>
+          <li>No gravel; gentle filtration.</li>
+          <li>Floating plants for nests.</li>
+        </ul>
+        <a href="https://www.amazon.com/s?k=betta+breeding+tank" target="_blank" class="product-cta">Get Breeding Tank Essentials</a>
+      </div>
+    </div>
 
-      <h3>Step 3 Introduce the Female Safely</h3>
-      <p>Place the female in a clear container inside the male tank until a bubble nest forms and both fish show mating behavior. Release only when the nest is stable.</p>
+    <div class="accordion">
+      <div class="accordion-summary">Step 3: Introduce & Spawn <span class="accordion-icon">+</span></div>
+      <div class="accordion-content">
+        <p>Use a chimney or container for safe introduction. Monitor for wrapping embrace.</p>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Betta Spawning Video" allowfullscreen></iframe> <!-- Replace with actual video ID -->
+        </div>
+        <p class="video-caption">Watch: Step-by-Step Spawning Guide</p>
+      </div>
+    </div>
 
-      <h3>Step 4 Spawning Behavior</h3>
-      <p>The male wraps the female, eggs are released, fertilized, and placed into the bubble nest. Remove the female immediately after spawning.</p>
-
-      <h3>Step 5 Egg and Fry Development</h3>
-      <ul>
-        <li>Eggs hatch in 24 to 48 hours</li>
-        <li>Fry become free swimming in 2 to 3 days</li>
-        <li>Remove the male once fry are free swimming</li>
-      </ul>
-
-      <div class="highlight">
-        <strong>Key principle</strong> Stable temperature, shallow water, and minimal disturbance dramatically increase hatch rates and fry survival.
+    <div class="accordion">
+      <div class="accordion-summary">Step 4: Post-Spawn Care <span class="accordion-icon">+</span></div>
+      <div class="accordion-content">
+        <p>Remove female post-spawn; male guards eggs. Hatch in 24-48 hours.</p>
       </div>
     </div>
   </section>
 
-  <!-- FRY CARE -->
   <section id="fry-care">
-    <h2>Betta Fry Care Guide</h2>
-    <div class="card">
-      <p>Proper fry care during the first 30 days determines long-term survival, growth, and coloration.</p>
+    <h2>Betta Fry Care</h2>
+    <p>Maximize survival with precise care protocols, videos, and recommended tools.</p>
 
-      <h3>Water Quality</h3>
-      <ul>
-        <li>Daily small water changes using aged water</li>
-        <li>Maintain temperature at 80 to 84 degrees Fahrenheit</li>
-        <li>Avoid strong water movement</li>
-      </ul>
+    <div class="accordion">
+      <div class="accordion-summary">Water Quality & Maintenance <span class="accordion-icon">+</span></div>
+      <div class="accordion-content">
+        <ul>
+          <li>Daily small changes with aged water.</li>
+          <li>80-84°F stable temp.</li>
+          <li>Minimal flow.</li>
+        </ul>
+        <a href="https://www.amazon.com/s?k=water+conditioner+betta" target="_blank" class="product-cta">Buy Water Conditioners</a>
+      </div>
+    </div>
 
-      <h3>Separation Timeline</h3>
-      <ul>
-        <li>Week 3 to 4 begin identifying aggressive males</li>
-        <li>Week 6 to 8 separate males into individual containers</li>
-      </ul>
+    <div class="accordion">
+      <div class="accordion-summary">Separation & Growth <span class="accordion-icon">+</span></div>
+      <div class="accordion-content">
+        <ul>
+          <li>Week 3-4: Spot aggressors.</li>
+          <li>Week 6-8: Jar males.</li>
+        </ul>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Fry Separation Video" allowfullscreen></iframe> <!-- Replace with actual -->
+        </div>
+        <p class="video-caption">Watch: Fry Jarring Tutorial</p>
+      </div>
     </div>
   </section>
 
-  <!-- TANK SETUP -->
   <section id="tank-setup">
-    <h2>Ideal Betta Breeding Tank Setup</h2>
-    <div class="card">
-      <p>This setup maximizes spawning success and fry survival.</p>
-
-      <table>
-        <caption>Recommended Breeding Tank Parameters</caption>
-        <thead>
-          <tr>
-            <th>Parameter</th>
-            <th>Optimal Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Tank size</td>
-            <td>5 to 10 gallons</td>
-          </tr>
-          <tr>
-            <td>Water temperature</td>
-            <td>80 to 86 degrees Fahrenheit</td>
-          </tr>
-          <tr>
-            <td>Water depth</td>
-            <td>5 to 6 inches</td>
-          </tr>
-          <tr>
-            <td>Filtration</td>
-            <td>None or sponge filter on very low flow</td>
-          </tr>
-          <tr>
-            <td>Substrate</td>
-            <td>None</td>
-          </tr>
-          <tr>
-            <td>Plants</td>
-            <td>Floating plants or leaf hammock</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <h2>Ideal Tank Setup</h2>
+    <p>Optimized parameters for breeding success.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Optimal Value</th>
+          <th>Recommended Product</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tank Size</td>
+          <td>5-10 gallons</td>
+          <td><a href="https://www.amazon.com/s?k=10+gallon+tank" target="_blank">Shop Tanks</a></td>
+        </tr>
+        <tr>
+          <td>Temperature</td>
+          <td>80-86°F</td>
+          <td><a href="https://www.amazon.com/s?k=aquarium+heater" target="_blank">Shop Heaters</a></td>
+        </tr>
+        <tr>
+          <td>Depth</td>
+          <td>5-6 inches</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Filtration</td>
+          <td>Sponge filter low flow</td>
+          <td><a href="https://www.amazon.com/s?k=sponge+filter" target="_blank">Shop Filters</a></td>
+        </tr>
+        <tr>
+          <td>Plants</td>
+          <td>Floating varieties</td>
+          <td><a href="https://www.amazon.com/s?k=floating+plants" target="_blank">Shop Plants</a></td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
-  <!-- FEEDING -->
   <section id="feeding">
-    <h2>Betta Fry Feeding Schedule</h2>
-    <div class="card">
-      <table>
-        <caption>Daily Feeding Plan for Betta Fry</caption>
-        <thead>
-          <tr>
-            <th>Day</th>
-            <th>Food</th>
-            <th>Frequency</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Day 1 to 2</td>
-            <td>Infusoria</td>
-            <td>3 to 4 times daily</td>
-          </tr>
-          <tr>
-            <td>Day 3 to 7</td>
-            <td>Newly hatched brine shrimp</td>
-            <td>3 times daily</td>
-          </tr>
-          <tr>
-            <td>Week 2 to 4</td>
-            <td>Microworms and baby brine shrimp</td>
-            <td>3 times daily</td>
-          </tr>
-          <tr>
-            <td>Week 4 and beyond</td>
-            <td>Finely crushed pellets and frozen foods</td>
-            <td>2 to 3 times daily</td>
-          </tr>
-        </tbody>
-      </table>
+    <h2>Fry Feeding Schedule</h2>
+    <p>Nutritional timeline with video demos.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Age</th>
+          <th>Food</th>
+          <th>Frequency</th>
+          <th>Product Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Day 1-2</td>
+          <td>Infusoria</td>
+          <td>3-4x daily</td>
+          <td><a href="https://www.amazon.com/s?k=infusoria+culture" target="_blank">Shop</a></td>
+        </tr>
+        <tr>
+          <td>Day 3-7</td>
+          <td>Brine shrimp</td>
+          <td>3x daily</td>
+          <td><a href="https://www.amazon.com/s?k=brine+shrimp+eggs" target="_blank">Shop</a></td>
+        </tr>
+        <tr>
+          <td>Week 2-4</td>
+          <td>Microworms + brine</td>
+          <td>3x daily</td>
+          <td><a href="https://www.amazon.com/s?k=microworms" target="_blank">Shop</a></td>
+        </tr>
+        <tr>
+          <td>Week 4+</td>
+          <td>Pellets + frozen</td>
+          <td>2-3x daily</td>
+          <td><a href="https://www.amazon.com/s?k=betta+pellets" target="_blank">Shop</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="video-wrapper" style="max-width: 600px; margin: 24px auto;">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Feeding Demo" allowfullscreen></iframe> <!-- Replace -->
     </div>
+    <p class="video-caption">Watch: Live Feeding Session</p>
   </section>
 
-  <!-- GENETICS -->
   <section id="genetics">
-    <h2>Betta Genetics and Color Inheritance</h2>
-    <div class="card">
-      <p>Understanding genetics helps predict fry coloration and tail type.</p>
-
-      <table>
-        <caption>Basic Betta Color Inheritance Examples</caption>
-        <thead>
-          <tr>
-            <th>Male Color</th>
-            <th>Female Color</th>
-            <th>Possible Fry Colors</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Red</td>
-            <td>Blue</td>
-            <td>Red, Blue, Purple</td>
-          </tr>
-          <tr>
-            <td>Platinum</td>
-            <td>Banana</td>
-            <td>Platinum, Banana, Mixed</td>
-          </tr>
-          <tr>
-            <td>Black</td>
-            <td>Turquoise</td>
-            <td>Dark blue, Black, Mixed</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <h2>Betta Genetics</h2>
+    <p>Predict outcomes with basic inheritance charts.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Male Color</th>
+          <th>Female Color</th>
+          <th>Possible Fry</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Red</td>
+          <td>Blue</td>
+          <td>Red, Blue, Purple</td>
+        </tr>
+        <tr>
+          <td>Platinum</td>
+          <td>Banana</td>
+          <td>Platinum, Banana, Mixed</td>
+        </tr>
+        <tr>
+          <td>Black</td>
+          <td>Turquoise</td>
+          <td>Dark Blue, Black, Mixed</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="highlight">Genetics Tip: Cross for desired traits to build your line.</div>
+    <a href="https://www.amazon.com/s?k=betta+genetics+book" target="_blank" class="product-cta">Learn More with Books</a>
   </section>
 
-  <!-- FAQ -->
   <section id="faq">
-    <h2>Frequently Asked Questions</h2>
-    <div class="card">
-
-      <h3>How long does it take betta eggs to hatch</h3>
-      <p>Betta eggs typically hatch within 24 to 48 hours under stable water temperatures of 80 to 86 degrees Fahrenheit.</p>
-
-      <h3>When do betta fry become free swimming</h3>
-      <p>Fry become free swimming about 2 to 3 days after hatching.</p>
-
-      <h3>When should I separate the male betta</h3>
-      <p>Remove the male once fry are free swimming to prevent predation.</p>
-
-      <h3>How many eggs do betta fish lay</h3>
-      <p>A healthy female can lay between 30 and 500 eggs depending on age and conditioning.</p>
-
-      <h3>Why are my betta fry dying</h3>
-      <p>Common causes include poor water quality, incorrect feeding size, temperature instability, and overfeeding.</p>
-
+    <h2>FAQ</h2>
+    <div class="accordion">
+      <div class="accordion-summary">How long for eggs to hatch? <span class="accordion-icon">+</span></div>
+      <div class="accordion-content">
+        <p>24-48 hours at 80-86°F.</p>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-summary">When do fry swim free? <span class="accordion-icon">+</span></div>
+      <div class="accordion-content">
+        <p>2-3 days post-hatch.</p>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-summary">When separate male? <span class="accordion-icon">+</span></div>
+      <div class="accordion-content">
+        <p>Once fry swim free.</p>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-summary">How many eggs? <span class="accordion-icon">+</span></div>
+      <div class="accordion-content">
+        <p>30-500 per spawn.</p>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-summary">Why fry dying? <span class="accordion-icon">+</span></div>
+      <div class="accordion-content">
+        <p>Poor water, wrong food, temp issues.</p>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Troubleshooting Video" allowfullscreen></iframe> <!-- Replace -->
+        </div>
+        <p class="video-caption">Watch: Common Mistakes Fixed</p>
+      </div>
     </div>
   </section>
 
-  <!-- VIDEOS -->
   <section id="videos">
-    <h2>Watch GTLAquatics on YouTube</h2>
-    <p>Follow @GTLAquatics for short, practical videos on betta breeding, fry care, tank setup, and fishkeeping success.</p>
-
-    <div class="youtube-grid">
-      <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=GTLAquatics" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=GTLAquatics" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=GTLAquatics" allowfullscreen></iframe>
+    <h2>GTLAquatics Videos</h2>
+    <p>Dive deeper with our YouTube tutorials. Subscribe for weekly tips!</p>
+    <div class="video-grid">
+      <div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Breeding Basics" allowfullscreen></iframe> <!-- Replace with actual IDs -->
+        </div>
+        <p class="video-caption">Breeding Basics</p>
+      </div>
+      <div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Fry Care Tips" allowfullscreen></iframe>
+        </div>
+        <p class="video-caption">Fry Care Tips</p>
+      </div>
+      <div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Tank Setup Guide" allowfullscreen></iframe>
+        </div>
+        <p class="video-caption">Tank Setup Guide</p>
+      </div>
     </div>
-
-    <p style="text-align:center; margin-top: 24px;">
-      <a class="cta" href="https://www.youtube.com/@GTLAquatics" target="_blank">Visit the GTLAquatics YouTube Channel</a>
+    <p style="text-align: center; margin-top: 32px;">
+      <a href="https://www.youtube.com/@GTLAquatics" target="_blank" class="product-cta">Subscribe on YouTube</a>
     </p>
   </section>
 
 </main>
 
 <footer>
-  <p>&copy; 2026 GTLAquatics</p>
-  <p>Betta breeding reference hub | Fishkeeping education | Fry survival science</p>
+  <p>&copy; 2026 GTLAquatics | <a href="#top">Back to Top</a></p>
+  <p>Your go-to for betta mastery. Follow us on YouTube for more!</p>
 </footer>
+
+<script>
+  // Accordion functionality
+  document.querySelectorAll('.accordion-summary').forEach(summary => {
+    summary.addEventListener('click', () => {
+      const accordion = summary.parentElement;
+      accordion.classList.toggle('active');
+    });
+  });
+
+  // Lazy load sections for smooth reveal
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
 
 </body>
 </html>
