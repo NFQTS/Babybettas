@@ -1,85 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>GTLAquatics | Ultimate Betta Breeding Guide</title>
-  <meta name="description" content="Master betta breeding with our all-in-one guide: fry care, tank setup, feeding, genetics, videos, and product recommendations for success.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords" content="betta breeding, betta fry care, betta tank setup, betta feeding schedule, betta genetics, aquarium fish breeding">
+  <meta charset="UTF-8" />
+  <title>GTLAquatics | The Breeding Intelligence Network</title>
+  <meta name="description" content="GTLAquatics is building the world's first breeder intelligence network. Join the movement to monetize data, not animals." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- SEO + AI Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "How to Breed Betta Fish",
-    "description": "Comprehensive guide to breeding betta fish, including setup, care, feeding, and genetics.",
-    "step": [
-      {
-        "@type": "HowToStep",
-        "name": "Choose a Compatible Pair",
-        "text": "Select healthy bettas aged 4-12 months and condition them."
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Prepare the Tank",
-        "text": "Set up a 5-10 gallon tank with optimal parameters."
-      }
-    ],
-    "supply": [
-      {
-        "@type": "HowToSupply",
-        "name": "Breeding Tank"
-      },
-      {
-        "@type": "HowToSupply",
-        "name": "Heater"
-      }
-    ],
-    "tool": [
-      {
-        "@type": "HowToTool",
-        "name": "Thermometer"
-      }
-    ],
-    "image": "https://example.com/betta-breeding.jpg",
-    "video": {
-      "@type": "VideoObject",
-      "name": "Betta Breeding Tutorial",
-      "description": "Step-by-step video guide.",
-      "thumbnailUrl": "https://example.com/thumbnail.jpg",
-      "contentUrl": "https://www.youtube.com/watch?v=example",
-      "embedUrl": "https://www.youtube.com/embed/example"
-    }
-  }
-  </script>
-
-  <!-- Additional FAQ Schema for AI/SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How long does it take betta eggs to hatch?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Betta eggs typically hatch within 24 to 48 hours under stable water temperatures of 80 to 86°F."
-        }
-      }
-    ]
-  }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --primary: #0a3d62; /* Deeper blue for elegance */
-      --accent: #ff4757; /* Vibrant coral for pops of energy */
-      --background: #f0f4f8; /* Soft, clean background */
-      --card: #ffffff;
-      --text: #2d3436;
-      --highlight: #ffeaa7;
+      --bg: #000;
+      --fg: #fff;
+      --muted: rgba(255,255,255,0.6);
+      --soft: rgba(255,255,255,0.1);
+      --accent: #fff;
     }
 
     * {
@@ -88,18 +23,32 @@
       padding: 0;
     }
 
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--background);
-      color: var(--text);
-      line-height: 1.6;
+    html {
       scroll-behavior: smooth;
     }
 
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Layout */
+
     header {
-      background: linear-gradient(135deg, var(--primary), #2980b9);
-      color: white;
-      padding: 80px 20px 60px;
+      min-height: 100vh;
+      padding: 80px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -108,545 +57,462 @@
     header::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://source.unsplash.com/random/1600x900/?aquarium,betta') no-repeat center/cover;
-      opacity: 0.15;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.08), transparent 70%);
+      pointer-events: none;
     }
 
     header h1 {
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      margin-bottom: 16px;
-      letter-spacing: 0.5px;
-      position: relative;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      animation: fadeUp 1s ease forwards;
     }
 
     header p {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.2rem;
+      max-width: 760px;
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-bottom: 40px;
+      animation: fadeUp 1.2s ease forwards;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      animation: fadeUp 1.4s ease forwards;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 999px;
+      border: 1px solid var(--fg);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: all 0.3s ease;
+      background: transparent;
+      color: var(--fg);
+      cursor: pointer;
+    }
+
+    .btn.primary {
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
       opacity: 0.9;
-      position: relative;
     }
 
     nav {
-      position: sticky;
+      position: fixed;
       top: 0;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      z-index: 1000;
-    }
-
-    nav ul {
+      width: 100%;
+      padding: 16px 24px;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      list-style: none;
-      padding: 16px;
-      gap: 16px;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--soft);
     }
 
-    nav a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-      padding: 10px 20px;
-      border-radius: 50px;
-      transition: all 0.3s ease;
+    nav .logo {
+      font-weight: 900;
+      letter-spacing: 0.1em;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 0.9rem;
+      color: var(--muted);
     }
 
     nav a:hover {
-      background: var(--accent);
-      color: white;
+      color: var(--fg);
     }
 
     main {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 0 24px 120px;
     }
 
     section {
-      margin-bottom: 60px;
-      scroll-margin-top: 100px;
+      margin-top: 160px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
     }
 
-    h2 {
-      font-size: clamp(2rem, 4vw, 2.5rem);
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
       margin-bottom: 24px;
-      color: var(--primary);
-      position: relative;
-      display: inline-block;
+      letter-spacing: -0.02em;
     }
 
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 60%;
-      height: 3px;
-      background: var(--accent);
-      border-radius: 2px;
+    section p.lead {
+      max-width: 720px;
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-bottom: 48px;
     }
 
-    .accordion {
-      margin-bottom: 16px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
+    /* Cards */
 
-    .accordion-summary {
-      background: var(--card);
-      padding: 16px 20px;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-weight: 600;
-      color: var(--primary);
-      transition: background 0.2s;
-    }
-
-    .accordion-summary:hover {
-      background: #f8fbfe;
-    }
-
-    .accordion-content {
-      background: var(--card);
-      padding: 0 20px 20px;
-      display: none;
-    }
-
-    .accordion.active .accordion-content {
-      display: block;
-    }
-
-    .accordion-icon {
-      font-size: 1.2rem;
-      transition: transform 0.3s;
-    }
-
-    .accordion.active .accordion-icon {
-      transform: rotate(45deg);
-    }
-
-    .highlight {
-      background: var(--highlight);
-      border-left: 4px solid var(--accent);
-      padding: 16px;
-      border-radius: 8px;
-      margin: 20px 0;
-      font-style: italic;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-      margin: 24px 0;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
-    }
-
-    th, td {
-      padding: 14px 16px;
-      text-align: left;
-      border-bottom: 1px solid #e9ecef;
-    }
-
-    th {
-      background: #f1f6fa;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    .product-cta {
-      display: inline-flex;
-      align-items: center;
-      background: var(--accent);
-      color: white;
-      padding: 12px 24px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 16px;
-      transition: transform 0.2s, background 0.2s;
-    }
-
-    .product-cta:hover {
-      background: #e84150;
-      transform: translateY(-2px);
-    }
-
-    .video-grid {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-      margin-top: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
     }
 
-    .video-wrapper {
-      position: relative;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio */
-      height: 0;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    .card {
+      border: 1px solid var(--soft);
+      border-radius: 20px;
+      padding: 32px;
+      background: rgba(255,255,255,0.02);
+      transition: all 0.3s ease;
     }
 
-    iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--fg);
+      background: rgba(255,255,255,0.04);
     }
 
-    .video-caption {
-      text-align: center;
-      margin-top: 12px;
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .card p {
       font-size: 0.95rem;
-      color: #636e72;
+      color: var(--muted);
     }
+
+    /* Split section */
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+    }
+
+    @media (max-width: 900px) {
+      .split {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .stack > * + * {
+      margin-top: 16px;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--soft);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    /* Interactive Feature Tiles */
+
+    .feature {
+      padding: 24px;
+      border-radius: 16px;
+      border: 1px solid var(--soft);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .feature:hover {
+      border-color: var(--fg);
+      transform: translateY(-4px);
+    }
+
+    .feature h4 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Footer */
 
     footer {
-      background: var(--primary);
-      color: white;
+      border-top: 1px solid var(--soft);
+      padding: 64px 24px;
       text-align: center;
-      padding: 40px 20px;
-      margin-top: 60px;
+      color: var(--muted);
     }
 
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
+    footer p {
+      margin-top: 16px;
+      font-size: 0.85rem;
     }
 
-    /* JavaScript-enabled enhancements */
-    @media (prefers-reduced-motion: no-preference) {
-      section {
+    /* Animations */
+
+    @keyframes fadeUp {
+      from {
         opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
+        transform: translateY(30px);
       }
-
-      section.visible {
+      to {
         opacity: 1;
         transform: translateY(0);
       }
     }
+
   </style>
 </head>
 <body>
 
-<header>
-  <h1>GTLAquatics: Master Betta Breeding</h1>
-  <p>Your streamlined, all-in-one resource for betta breeding success. From setup to fry care, genetics, and beyond – with expert videos and product recommendations.</p>
-</header>
-
 <nav>
-  <ul>
-    <li><a href="#breeding">Breeding</a></li>
-    <li><a href="#fry-care">Fry Care</a></li>
-    <li><a href="#tank-setup">Tank Setup</a></li>
-    <li><a href="#feeding">Feeding</a></li>
-    <li><a href="#genetics">Genetics</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#videos">Videos</a></li>
-  </ul>
+  <div class="logo">GTLAQUATICS</div>
+  <div class="nav-links">
+    <a href="#mission">Mission</a>
+    <a href="#network">Network</a>
+    <a href="#tools">Tools</a>
+    <a href="#market">Marketplace</a>
+    <a href="#join">Join</a>
+  </div>
 </nav>
+
+<header>
+  <h1>The Breeding Intelligence Network</h1>
+  <p>
+    We’re redefining animal breeding — shifting value away from commoditization
+    and toward data, genetics, transparency, and collaboration.
+  </p>
+  <div class="cta-row">
+    <a href="#join" class="btn primary">Join as a Breeder</a>
+    <a href="#market" class="btn">Find Trusted Breeders</a>
+  </div>
+</header>
 
 <main>
 
-  <section id="breeding">
-    <h2>How to Breed Betta Fish</h2>
-    <p>Breeding bettas is an art and science. Follow these steps for high success rates, integrated with video tutorials and product links.</p>
-
-    <div class="accordion">
-      <div class="accordion-summary">Step 1: Choose a Compatible Pair <span class="accordion-icon">+</span></div>
-      <div class="accordion-content">
-        <ul>
-          <li>Select healthy bettas aged 4-12 months.</li>
-          <li>Condition with protein-rich foods for 1-2 weeks.</li>
-          <li>Look for flaring, color changes, and female bars.</li>
-        </ul>
-        <div class="highlight">Pro Tip: Healthy pairs increase spawn viability by 50%.</div>
-        <a href="https://www.amazon.com/s?k=betta+conditioning+food" target="_blank" class="product-cta">Shop Conditioning Foods</a>
-      </div>
-    </div>
-
-    <div class="accordion">
-      <div class="accordion-summary">Step 2: Prepare the Breeding Tank <span class="accordion-icon">+</span></div>
-      <div class="accordion-content">
-        <ul>
-          <li>5-10 gallon tank.</li>
-          <li>80-86°F temperature.</li>
-          <li>5-6 inches water depth.</li>
-          <li>No gravel; gentle filtration.</li>
-          <li>Floating plants for nests.</li>
-        </ul>
-        <a href="https://www.amazon.com/s?k=betta+breeding+tank" target="_blank" class="product-cta">Get Breeding Tank Essentials</a>
-      </div>
-    </div>
-
-    <div class="accordion">
-      <div class="accordion-summary">Step 3: Introduce & Spawn <span class="accordion-icon">+</span></div>
-      <div class="accordion-content">
-        <p>Use a chimney or container for safe introduction. Monitor for wrapping embrace.</p>
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Betta Spawning Video" allowfullscreen></iframe> <!-- Replace with actual video ID -->
-        </div>
-        <p class="video-caption">Watch: Step-by-Step Spawning Guide</p>
-      </div>
-    </div>
-
-    <div class="accordion">
-      <div class="accordion-summary">Step 4: Post-Spawn Care <span class="accordion-icon">+</span></div>
-      <div class="accordion-content">
-        <p>Remove female post-spawn; male guards eggs. Hatch in 24-48 hours.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="fry-care">
-    <h2>Betta Fry Care</h2>
-    <p>Maximize survival with precise care protocols, videos, and recommended tools.</p>
-
-    <div class="accordion">
-      <div class="accordion-summary">Water Quality & Maintenance <span class="accordion-icon">+</span></div>
-      <div class="accordion-content">
-        <ul>
-          <li>Daily small changes with aged water.</li>
-          <li>80-84°F stable temp.</li>
-          <li>Minimal flow.</li>
-        </ul>
-        <a href="https://www.amazon.com/s?k=water+conditioner+betta" target="_blank" class="product-cta">Buy Water Conditioners</a>
-      </div>
-    </div>
-
-    <div class="accordion">
-      <div class="accordion-summary">Separation & Growth <span class="accordion-icon">+</span></div>
-      <div class="accordion-content">
-        <ul>
-          <li>Week 3-4: Spot aggressors.</li>
-          <li>Week 6-8: Jar males.</li>
-        </ul>
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Fry Separation Video" allowfullscreen></iframe> <!-- Replace with actual -->
-        </div>
-        <p class="video-caption">Watch: Fry Jarring Tutorial</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="tank-setup">
-    <h2>Ideal Tank Setup</h2>
-    <p>Optimized parameters for breeding success.</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Parameter</th>
-          <th>Optimal Value</th>
-          <th>Recommended Product</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Tank Size</td>
-          <td>5-10 gallons</td>
-          <td><a href="https://www.amazon.com/s?k=10+gallon+tank" target="_blank">Shop Tanks</a></td>
-        </tr>
-        <tr>
-          <td>Temperature</td>
-          <td>80-86°F</td>
-          <td><a href="https://www.amazon.com/s?k=aquarium+heater" target="_blank">Shop Heaters</a></td>
-        </tr>
-        <tr>
-          <td>Depth</td>
-          <td>5-6 inches</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td>Filtration</td>
-          <td>Sponge filter low flow</td>
-          <td><a href="https://www.amazon.com/s?k=sponge+filter" target="_blank">Shop Filters</a></td>
-        </tr>
-        <tr>
-          <td>Plants</td>
-          <td>Floating varieties</td>
-          <td><a href="https://www.amazon.com/s?k=floating+plants" target="_blank">Shop Plants</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <section id="feeding">
-    <h2>Fry Feeding Schedule</h2>
-    <p>Nutritional timeline with video demos.</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Age</th>
-          <th>Food</th>
-          <th>Frequency</th>
-          <th>Product Link</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Day 1-2</td>
-          <td>Infusoria</td>
-          <td>3-4x daily</td>
-          <td><a href="https://www.amazon.com/s?k=infusoria+culture" target="_blank">Shop</a></td>
-        </tr>
-        <tr>
-          <td>Day 3-7</td>
-          <td>Brine shrimp</td>
-          <td>3x daily</td>
-          <td><a href="https://www.amazon.com/s?k=brine+shrimp+eggs" target="_blank">Shop</a></td>
-        </tr>
-        <tr>
-          <td>Week 2-4</td>
-          <td>Microworms + brine</td>
-          <td>3x daily</td>
-          <td><a href="https://www.amazon.com/s?k=microworms" target="_blank">Shop</a></td>
-        </tr>
-        <tr>
-          <td>Week 4+</td>
-          <td>Pellets + frozen</td>
-          <td>2-3x daily</td>
-          <td><a href="https://www.amazon.com/s?k=betta+pellets" target="_blank">Shop</a></td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="video-wrapper" style="max-width: 600px; margin: 24px auto;">
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Feeding Demo" allowfullscreen></iframe> <!-- Replace -->
-    </div>
-    <p class="video-caption">Watch: Live Feeding Session</p>
-  </section>
-
-  <section id="genetics">
-    <h2>Betta Genetics</h2>
-    <p>Predict outcomes with basic inheritance charts.</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Male Color</th>
-          <th>Female Color</th>
-          <th>Possible Fry</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Red</td>
-          <td>Blue</td>
-          <td>Red, Blue, Purple</td>
-        </tr>
-        <tr>
-          <td>Platinum</td>
-          <td>Banana</td>
-          <td>Platinum, Banana, Mixed</td>
-        </tr>
-        <tr>
-          <td>Black</td>
-          <td>Turquoise</td>
-          <td>Dark Blue, Black, Mixed</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="highlight">Genetics Tip: Cross for desired traits to build your line.</div>
-    <a href="https://www.amazon.com/s?k=betta+genetics+book" target="_blank" class="product-cta">Learn More with Books</a>
-  </section>
-
-  <section id="faq">
-    <h2>FAQ</h2>
-    <div class="accordion">
-      <div class="accordion-summary">How long for eggs to hatch? <span class="accordion-icon">+</span></div>
-      <div class="accordion-content">
-        <p>24-48 hours at 80-86°F.</p>
-      </div>
-    </div>
-    <div class="accordion">
-      <div class="accordion-summary">When do fry swim free? <span class="accordion-icon">+</span></div>
-      <div class="accordion-content">
-        <p>2-3 days post-hatch.</p>
-      </div>
-    </div>
-    <div class="accordion">
-      <div class="accordion-summary">When separate male? <span class="accordion-icon">+</span></div>
-      <div class="accordion-content">
-        <p>Once fry swim free.</p>
-      </div>
-    </div>
-    <div class="accordion">
-      <div class="accordion-summary">How many eggs? <span class="accordion-icon">+</span></div>
-      <div class="accordion-content">
-        <p>30-500 per spawn.</p>
-      </div>
-    </div>
-    <div class="accordion">
-      <div class="accordion-summary">Why fry dying? <span class="accordion-icon">+</span></div>
-      <div class="accordion-content">
-        <p>Poor water, wrong food, temp issues.</p>
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Troubleshooting Video" allowfullscreen></iframe> <!-- Replace -->
-        </div>
-        <p class="video-caption">Watch: Common Mistakes Fixed</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="videos">
-    <h2>GTLAquatics Videos</h2>
-    <p>Dive deeper with our YouTube tutorials. Subscribe for weekly tips!</p>
-    <div class="video-grid">
-      <div>
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Breeding Basics" allowfullscreen></iframe> <!-- Replace with actual IDs -->
-        </div>
-        <p class="video-caption">Breeding Basics</p>
-      </div>
-      <div>
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Fry Care Tips" allowfullscreen></iframe>
-        </div>
-        <p class="video-caption">Fry Care Tips</p>
-      </div>
-      <div>
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Tank Setup Guide" allowfullscreen></iframe>
-        </div>
-        <p class="video-caption">Tank Setup Guide</p>
-      </div>
-    </div>
-    <p style="text-align: center; margin-top: 32px;">
-      <a href="https://www.youtube.com/@GTLAquatics" target="_blank" class="product-cta">Subscribe on YouTube</a>
+  <!-- Mission -->
+  <section id="mission">
+    <span class="pill">Our Mission</span>
+    <h2>Monetize intelligence, not animals.</h2>
+    <p class="lead">
+      GTLAquatics exists to prove that breeding can be ethical, transparent,
+      profitable, and data-driven — without turning living animals into commodities.
     </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>🧬 Data First</h3>
+        <p>
+          We collect real-world breeding data — genetics, health, outcomes — and turn it into valuable datasets for AI, research, and optimization.
+        </p>
+      </div>
+      <div class="card">
+        <h3>🤝 Network Powered</h3>
+        <p>
+          Breeders collaborate instead of competing blindly — sharing insights, improving outcomes, and unlocking new revenue streams together.
+        </p>
+      </div>
+      <div class="card">
+        <h3>🛒 Commerce Without Commoditization</h3>
+        <p>
+          Instead of selling fish, we facilitate ethical sales, take commissions, and build tools that support breeders and keepers.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Network -->
+  <section id="network">
+    <span class="pill">Breeder Network</span>
+    <h2>A private network for serious breeders.</h2>
+    <p class="lead">
+      Membership unlocks access to our sales infrastructure, data tools,
+      genetics tracking, and trusted buyer network.
+    </p>
+
+    <div class="split">
+      <div class="stack">
+        <div class="feature">
+          <h4>Breeder Profiles & Reputation</h4>
+          <p>
+            Public trust scores, verified breeding records, and transparent lineage tracking.
+          </p>
+        </div>
+        <div class="feature">
+          <h4>Sales Network Access</h4>
+          <p>
+            We help move your fish ethically through our marketplace — you keep control, we provide distribution.
+          </p>
+        </div>
+        <div class="feature">
+          <h4>Commission-Free Direct Sales (Members)</h4>
+          <p>
+            Members can transact directly with buyers using our platform infrastructure.
+          </p>
+        </div>
+      </div>
+
+      <div class="stack">
+        <div class="feature">
+          <h4>Genetics & Lineage Tracking</h4>
+          <p>
+            Track pairings, outcomes, traits, and generational performance over time.
+          </p>
+        </div>
+        <div class="feature">
+          <h4>Data Monetization</h4>
+          <p>
+            Opt-in to contribute anonymized data to research, AI models, and industry datasets — and get paid.
+          </p>
+        </div>
+        <div class="feature">
+          <h4>Private Community & Mentorship</h4>
+          <p>
+            Access top breeders, experiments, case studies, and private discussions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section id="tools">
+    <span class="pill">Breeding Intelligence</span>
+    <h2>Tools designed for real-world breeding.</h2>
+    <p class="lead">
+      We’re building a living operating system for breeders — not a blog.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Breeding Journal</h3>
+        <p>
+          Log pairings, spawn sizes, hatch rates, survival curves, growth rates, and phenotypes.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Genetic Outcome Modeling</h3>
+        <p>
+          Predict possible traits based on lineage, historical outcomes, and population data.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Health & Survival Analytics</h3>
+        <p>
+          Identify failure points, disease patterns, and environmental correlations.
+        </p>
+      </div>
+      <div class="card">
+        <h3>AI Breeding Advisor (Coming)</h3>
+        <p>
+          Personalized pairing suggestions, feeding schedules, and growth optimization.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marketplace -->
+  <section id="market">
+    <span class="pill">Marketplace</span>
+    <h2>Buy fish from people you can actually trust.</h2>
+    <p class="lead">
+      No more guessing. No more mystery genetics. No more sketchy sellers.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Verified Breeders Only</h3>
+        <p>
+          Every seller is vetted, profiled, and tracked — with real breeding data behind every fish.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Transparent Lineage</h3>
+        <p>
+          See parent genetics, breeding conditions, growth data, and historical outcomes.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Ethical Sales Model</h3>
+        <p>
+          Breeders retain control. We provide infrastructure, trust, and traffic — and take a fair commission.
+        </p>
+      </div>
+    </div>
+
+    <div style="margin-top: 48px; text-align: center;">
+      <a href="#join" class="btn primary">Browse Trusted Breeders</a>
+    </div>
+  </section>
+
+  <!-- Join -->
+  <section id="join">
+    <span class="pill">Join the Movement</span>
+    <h2>Breeders don’t need middlemen. They need infrastructure.</h2>
+    <p class="lead">
+      GTLAquatics is building the first breeding intelligence economy — and we’re inviting founding members.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Breeder Membership</h3>
+        <p>
+          Join the private network. Access tools, sales infrastructure, data monetization, and community.
+        </p>
+        <div style="margin-top: 24px;">
+          <a href="#" class="btn primary">Apply as Breeder</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Supporter / Hobbyist Access</h3>
+        <p>
+          Find trusted breeders, learn from real data, and support ethical breeding.
+        </p>
+        <div style="margin-top: 24px;">
+          <a href="#" class="btn">Explore Marketplace</a>
+        </div>
+      </div>
+    </div>
   </section>
 
 </main>
 
 <footer>
-  <p>&copy; 2026 GTLAquatics | <a href="#top">Back to Top</a></p>
-  <p>Your go-to for betta mastery. Follow us on YouTube for more!</p>
+  <div class="logo" style="font-weight:900; letter-spacing:0.1em;">GTLAQUATICS</div>
+  <p>
+    Building the breeding intelligence network.
+  </p>
+  <p>
+    © 2026 GTLAquatics. All rights reserved.
+  </p>
 </footer>
 
 <script>
-  // Accordion functionality
-  document.querySelectorAll('.accordion-summary').forEach(summary => {
-    summary.addEventListener('click', () => {
-      const accordion = summary.parentElement;
-      accordion.classList.toggle('active');
-    });
-  });
-
-  // Lazy load sections for smooth reveal
   const sections = document.querySelectorAll('section');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -654,12 +520,10 @@
         entry.target.classList.add('visible');
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.15 });
 
   sections.forEach(section => observer.observe(section));
 </script>
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
 
 </body>
 </html>
