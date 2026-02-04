@@ -2,288 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>GTLAquatics | The Breeding Intelligence Network</title>
-  <meta name="description" content="GTLAquatics is building the world's first breeder intelligence network. Join the movement to monetize data, not animals." />
+  <title>GTLAquatics | Instant Fish Breeder</title>
+  <meta name="description" content="GTLAquatics: Breed fish instantly, have fun, and contribute to a global breeding network." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #000;
+      --bg: #0a1a2b;
       --fg: #fff;
       --muted: rgba(255,255,255,0.6);
       --soft: rgba(255,255,255,0.1);
-      --accent: #fff;
+      --accent: #00e0ff;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin:0; padding:0;}
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--fg); line-height:1.6; overflow-x:hidden; }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* Layout */
-
-    header {
-      min-height: 100vh;
-      padding: 80px 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at center, rgba(255,255,255,0.08), transparent 70%);
-      pointer-events: none;
-    }
-
-    header h1 {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 900;
-      letter-spacing: -0.02em;
-      margin-bottom: 24px;
-      animation: fadeUp 1s ease forwards;
-    }
-
-    header p {
-      max-width: 760px;
-      font-size: 1.1rem;
-      color: var(--muted);
-      margin-bottom: 40px;
-      animation: fadeUp 1.2s ease forwards;
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      justify-content: center;
-      animation: fadeUp 1.4s ease forwards;
-    }
-
-    .btn {
-      padding: 14px 28px;
-      border-radius: 999px;
-      border: 1px solid var(--fg);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      transition: all 0.3s ease;
-      background: transparent;
-      color: var(--fg);
-      cursor: pointer;
-    }
-
-    .btn.primary {
-      background: var(--fg);
-      color: var(--bg);
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
-    }
+    a { color: inherit; text-decoration:none; }
 
     nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      padding: 16px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(0,0,0,0.7);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      border-bottom: 1px solid var(--soft);
+      position: fixed; top:0; width:100%; padding:16px 24px; display:flex; justify-content:space-between; align-items:center;
+      background: rgba(10,26,43,0.7); backdrop-filter: blur(10px); z-index:1000; border-bottom:1px solid var(--soft);
     }
+    nav .logo { font-weight:900; letter-spacing:0.1em; }
+    nav .nav-links { display:flex; gap:20px; font-size:0.9rem; color: var(--muted);}
+    nav a:hover { color: var(--accent); }
 
-    nav .logo {
-      font-weight: 900;
-      letter-spacing: 0.1em;
-    }
+    header { min-height:90vh; padding:100px 24px 60px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; position:relative; overflow:hidden;}
+    header h1 { font-size:clamp(2.5rem,6vw,4.5rem); font-weight:900; letter-spacing:-0.02em; margin-bottom:24px;}
+    header p { max-width:760px; font-size:1.1rem; color: var(--muted); margin-bottom:40px; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:16px; justify-content:center; }
+    .btn { padding:14px 28px; border-radius:999px; border:1px solid var(--fg); font-weight:600; letter-spacing:0.02em; background:transparent; color:var(--fg); cursor:pointer; transition:0.3s; }
+    .btn.primary { background: var(--fg); color: var(--bg); }
+    .btn:hover { transform:translateY(-2px); opacity:0.9; }
 
-    nav .nav-links {
-      display: flex;
-      gap: 20px;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
+    main { max-width:1200px; margin:0 auto; padding:0 24px 120px; }
 
-    nav a:hover {
-      color: var(--fg);
-    }
+    section { margin-top:160px; opacity:0; transform:translateY(40px); transition: all 0.8s ease; }
+    section.visible { opacity:1; transform:translateY(0); }
+    section h2 { font-size:clamp(1.8rem,4vw,2.6rem); font-weight:800; margin-bottom:24px; letter-spacing:-0.02em; }
+    section p.lead { max-width:720px; font-size:1.1rem; color: var(--muted); margin-bottom:48px; }
 
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px 120px;
-    }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:32px; }
+    .card { border:1px solid var(--soft); border-radius:20px; padding:32px; background: rgba(255,255,255,0.02); transition: all 0.3s ease; }
+    .card:hover { transform:translateY(-6px); border-color: var(--accent); background: rgba(255,255,255,0.04); }
+    .card h3 { font-size:1.2rem; margin-bottom:12px; font-weight:700; }
+    .card p { font-size:0.95rem; color: var(--muted); }
 
-    section {
-      margin-top: 160px;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease;
-    }
+    .pill { display:inline-block; padding:6px 14px; border-radius:999px; border:1px solid var(--soft); font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color: var(--muted); margin-bottom:16px; }
 
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    /* Fish Breeder Section */
+    #fish-simulator { text-align:center; }
+    #tank { position:relative; width:90%; max-width:600px; height:400px; background: linear-gradient(to bottom, #005577, #00aaff); border:4px solid var(--accent); border-radius:20px; margin:0 auto 24px; overflow:hidden;}
+    .fish { position:absolute; width:50px; height:30px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:bold; text-shadow:0 0 2px #000; animation:swim 10s infinite linear; }
+    @keyframes swim { 0%{transform:translateX(0) translateY(0);} 50%{transform:translateX(200px) translateY(50px);} 100%{transform:translateX(0) translateY(0);} }
 
-    section h2 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      font-weight: 800;
-      margin-bottom: 24px;
-      letter-spacing: -0.02em;
-    }
+    #goal { font-size:1.2rem; color:var(--accent); margin-bottom:16px; }
+    #resetBtn { margin-bottom:48px; }
 
-    section p.lead {
-      max-width: 720px;
-      font-size: 1.1rem;
-      color: var(--muted);
-      margin-bottom: 48px;
-    }
-
-    /* Cards */
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 32px;
-    }
-
-    .card {
-      border: 1px solid var(--soft);
-      border-radius: 20px;
-      padding: 32px;
-      background: rgba(255,255,255,0.02);
-      transition: all 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: var(--fg);
-      background: rgba(255,255,255,0.04);
-    }
-
-    .card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 12px;
-      font-weight: 700;
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    /* Split section */
-
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-    }
-
-    @media (max-width: 900px) {
-      .split {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .stack > * + * {
-      margin-top: 16px;
-    }
-
-    .pill {
-      display: inline-block;
-      padding: 6px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--soft);
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-
-    /* Interactive Feature Tiles */
-
-    .feature {
-      padding: 24px;
-      border-radius: 16px;
-      border: 1px solid var(--soft);
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-
-    .feature:hover {
-      border-color: var(--fg);
-      transform: translateY(-4px);
-    }
-
-    .feature h4 {
-      font-size: 1rem;
-      margin-bottom: 8px;
-    }
-
-    .feature p {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    /* Footer */
-
-    footer {
-      border-top: 1px solid var(--soft);
-      padding: 64px 24px;
-      text-align: center;
-      color: var(--muted);
-    }
-
-    footer p {
-      margin-top: 16px;
-      font-size: 0.85rem;
-    }
-
-    /* Animations */
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    footer { border-top:1px solid var(--soft); padding:64px 24px; text-align:center; color:var(--muted); }
+    footer p { margin-top:16px; font-size:0.85rem; }
 
   </style>
 </head>
@@ -293,22 +74,18 @@
   <div class="logo">GTLAQUATICS</div>
   <div class="nav-links">
     <a href="#mission">Mission</a>
-    <a href="#network">Network</a>
+    <a href="#simulator">Simulator</a>
     <a href="#tools">Tools</a>
-    <a href="#market">Marketplace</a>
     <a href="#join">Join</a>
   </div>
 </nav>
 
 <header>
-  <h1>The Breeding Intelligence Network</h1>
-  <p>
-    We’re redefining animal breeding — shifting value away from commoditization
-    and toward data, genetics, transparency, and collaboration.
-  </p>
+  <h1>Instant Fish Breeder</h1>
+  <p>Breed your fish, watch them grow, and contribute to a global virtual breeding network — all from your browser.</p>
   <div class="cta-row">
-    <a href="#join" class="btn primary">Join as a Breeder</a>
-    <a href="#market" class="btn">Find Trusted Breeders</a>
+    <a href="#simulator" class="btn primary">Try It Now</a>
+    <a href="#join" class="btn">Join the Network</a>
   </div>
 </header>
 
@@ -317,184 +94,77 @@
   <!-- Mission -->
   <section id="mission">
     <span class="pill">Our Mission</span>
-    <h2>Monetize intelligence, not animals.</h2>
-    <p class="lead">
-      GTLAquatics exists to prove that breeding can be ethical, transparent,
-      profitable, and data-driven — without turning living animals into commodities.
-    </p>
+    <h2>Have Fun, Learn, and Contribute</h2>
+    <p class="lead">GTLAquatics is redefining breeding — starting with a fun, interactive simulator that anyone can play, no account needed.</p>
 
     <div class="grid">
       <div class="card">
-        <h3>🧬 Data First</h3>
-        <p>
-          We collect real-world breeding data — genetics, health, outcomes — and turn it into valuable datasets for AI, research, and optimization.
-        </p>
+        <h3>🎮 Play First</h3>
+        <p>Instantly breed virtual fish, see offspring, and enjoy a visually engaging experience.</p>
       </div>
       <div class="card">
-        <h3>🤝 Network Powered</h3>
-        <p>
-          Breeders collaborate instead of competing blindly — sharing insights, improving outcomes, and unlocking new revenue streams together.
-        </p>
+        <h3>🌐 Global Goals</h3>
+        <p>Contribute to shared community breeding challenges. Every click counts!</p>
       </div>
       <div class="card">
-        <h3>🛒 Commerce Without Commoditization</h3>
-        <p>
-          Instead of selling fish, we facilitate ethical sales, take commissions, and build tools that support breeders and keepers.
-        </p>
+        <h3>🧬 Learn Genetics</h3>
+        <p>Watch traits combine in real time. Early prototype for real-world genetic modeling.</p>
       </div>
     </div>
   </section>
 
-  <!-- Network -->
-  <section id="network">
-    <span class="pill">Breeder Network</span>
-    <h2>A private network for serious breeders.</h2>
-    <p class="lead">
-      Membership unlocks access to our sales infrastructure, data tools,
-      genetics tracking, and trusted buyer network.
-    </p>
+  <!-- Fish Simulator -->
+  <section id="simulator">
+    <span class="pill">Fish Simulator</span>
+    <h2>Breed Fish Instantly</h2>
+    <p class="lead">Click two fish in the tank to generate offspring. Contribute to our global breeding goal and watch your tank come alive.</p>
 
-    <div class="split">
-      <div class="stack">
-        <div class="feature">
-          <h4>Breeder Profiles & Reputation</h4>
-          <p>
-            Public trust scores, verified breeding records, and transparent lineage tracking.
-          </p>
-        </div>
-        <div class="feature">
-          <h4>Sales Network Access</h4>
-          <p>
-            We help move your fish ethically through our marketplace — you keep control, we provide distribution.
-          </p>
-        </div>
-        <div class="feature">
-          <h4>Commission-Free Direct Sales (Members)</h4>
-          <p>
-            Members can transact directly with buyers using our platform infrastructure.
-          </p>
-        </div>
-      </div>
-
-      <div class="stack">
-        <div class="feature">
-          <h4>Genetics & Lineage Tracking</h4>
-          <p>
-            Track pairings, outcomes, traits, and generational performance over time.
-          </p>
-        </div>
-        <div class="feature">
-          <h4>Data Monetization</h4>
-          <p>
-            Opt-in to contribute anonymized data to research, AI models, and industry datasets — and get paid.
-          </p>
-        </div>
-        <div class="feature">
-          <h4>Private Community & Mentorship</h4>
-          <p>
-            Access top breeders, experiments, case studies, and private discussions.
-          </p>
-        </div>
-      </div>
-    </div>
+    <div id="goal">Global goal: 0 / 50 fish bred</div>
+    <div id="tank"></div>
+    <button id="resetBtn" class="btn primary">Reset Tank</button>
   </section>
 
   <!-- Tools -->
   <section id="tools">
-    <span class="pill">Breeding Intelligence</span>
-    <h2>Tools designed for real-world breeding.</h2>
-    <p class="lead">
-      We’re building a living operating system for breeders — not a blog.
-    </p>
+    <span class="pill">Future Tools</span>
+    <h2>Where We’re Going</h2>
+    <p class="lead">The simulator is just the start. GTLAquatics will evolve into a full breeding intelligence network.</p>
 
     <div class="grid">
       <div class="card">
-        <h3>Breeding Journal</h3>
-        <p>
-          Log pairings, spawn sizes, hatch rates, survival curves, growth rates, and phenotypes.
-        </p>
+        <h3>Genetic Outcome Predictor</h3>
+        <p>Predict offspring traits from real breeders’ photos and lineage data.</p>
       </div>
       <div class="card">
-        <h3>Genetic Outcome Modeling</h3>
-        <p>
-          Predict possible traits based on lineage, historical outcomes, and population data.
-        </p>
+        <h3>AI Breeding Advisor</h3>
+        <p>Get recommendations for optimal pairings, tank conditions, and survival rates.</p>
       </div>
       <div class="card">
-        <h3>Health & Survival Analytics</h3>
-        <p>
-          Identify failure points, disease patterns, and environmental correlations.
-        </p>
+        <h3>Community Data & Rewards</h3>
+        <p>Contribute anonymized data, earn points, and unlock rare virtual fish.</p>
       </div>
-      <div class="card">
-        <h3>AI Breeding Advisor (Coming)</h3>
-        <p>
-          Personalized pairing suggestions, feeding schedules, and growth optimization.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Marketplace -->
-  <section id="market">
-    <span class="pill">Marketplace</span>
-    <h2>Buy fish from people you can actually trust.</h2>
-    <p class="lead">
-      No more guessing. No more mystery genetics. No more sketchy sellers.
-    </p>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Verified Breeders Only</h3>
-        <p>
-          Every seller is vetted, profiled, and tracked — with real breeding data behind every fish.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Transparent Lineage</h3>
-        <p>
-          See parent genetics, breeding conditions, growth data, and historical outcomes.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Ethical Sales Model</h3>
-        <p>
-          Breeders retain control. We provide infrastructure, trust, and traffic — and take a fair commission.
-        </p>
-      </div>
-    </div>
-
-    <div style="margin-top: 48px; text-align: center;">
-      <a href="#join" class="btn primary">Browse Trusted Breeders</a>
     </div>
   </section>
 
   <!-- Join -->
   <section id="join">
     <span class="pill">Join the Movement</span>
-    <h2>Breeders don’t need middlemen. They need infrastructure.</h2>
-    <p class="lead">
-      GTLAquatics is building the first breeding intelligence economy — and we’re inviting founding members.
-    </p>
+    <h2>Play, Learn, and Grow With Us</h2>
+    <p class="lead">GTLAquatics is building the first breeding intelligence economy — interactive, fun, and educational.</p>
 
     <div class="grid">
       <div class="card">
         <h3>Breeder Membership</h3>
-        <p>
-          Join the private network. Access tools, sales infrastructure, data monetization, and community.
-        </p>
-        <div style="margin-top: 24px;">
+        <p>Access tools, analytics, and the full breeding network.</p>
+        <div style="margin-top:24px;">
           <a href="#" class="btn primary">Apply as Breeder</a>
         </div>
       </div>
-
       <div class="card">
-        <h3>Supporter / Hobbyist Access</h3>
-        <p>
-          Find trusted breeders, learn from real data, and support ethical breeding.
-        </p>
-        <div style="margin-top: 24px;">
-          <a href="#" class="btn">Explore Marketplace</a>
+        <h3>Hobbyist Access</h3>
+        <p>Play the simulator, learn about breeding, and see global progress.</p>
+        <div style="margin-top:24px;">
+          <a href="#" class="btn">Try Simulator</a>
         </div>
       </div>
     </div>
@@ -504,26 +174,92 @@
 
 <footer>
   <div class="logo" style="font-weight:900; letter-spacing:0.1em;">GTLAQUATICS</div>
-  <p>
-    Building the breeding intelligence network.
-  </p>
-  <p>
-    © 2026 GTLAquatics. All rights reserved.
-  </p>
+  <p>Instant Fish Breeder & Breeding Intelligence Network.</p>
+  <p>© 2026 GTLAquatics. All rights reserved.</p>
 </footer>
 
 <script>
+  // Section fade-in
   const sections = document.querySelectorAll('section');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+      if(entry.isIntersecting) entry.target.classList.add('visible');
     });
-  }, { threshold: 0.15 });
-
+  }, { threshold:0.15 });
   sections.forEach(section => observer.observe(section));
-</script>
 
+  // Fish simulator
+  const tank = document.getElementById('tank');
+  const goalEl = document.getElementById('goal');
+  let fishCount = 0;
+  const globalGoal = 50;
+  let fishId = 0;
+  let selectedFish = [];
+
+  function createFish(color=null) {
+    const fish = document.createElement('div');
+    fish.classList.add('fish');
+    fish.dataset.id = fishId++;
+
+    const colors = ['#ff4d4d','#4dff4d','#4d4dff','#ffd24d','#ff4dd2'];
+    fish.style.backgroundColor = color || colors[Math.floor(Math.random()*colors.length)];
+
+    const fins = ['><>','><))>','><)))>','><>'];
+    fish.textContent = fins[Math.floor(Math.random()*fins.length)];
+
+    fish.style.top = Math.random()*(tank.clientHeight-30)+'px';
+    fish.style.left = Math.random()*(tank.clientWidth-50)+'px';
+
+    fish.addEventListener('click', selectFish);
+    tank.appendChild(fish);
+    return fish;
+  }
+
+  function selectFish(e){
+    const fish = e.currentTarget;
+    if(!selectedFish.includes(fish)){
+      selectedFish.push(fish);
+      fish.style.outline='3px solid gold';
+    }
+    if(selectedFish.length===2){
+      breedFish(selectedFish[0],selectedFish[1]);
+      selectedFish.forEach(f=>f.style.outline='');
+      selectedFish=[];
+    }
+  }
+
+  function breedFish(f1,f2){
+    const babyCount = Math.floor(Math.random()*3)+1;
+    for(let i=0;i<babyCount;i++){
+      const babyColor = mixColors(f1.style.backgroundColor,f2.style.backgroundColor);
+      createFish(babyColor);
+      fishCount++;
+    }
+    updateGoal();
+  }
+
+  function mixColors(c1,c2){
+    function hexToRgb(hex){hex=hex.replace('#','');return [parseInt(hex.substring(0,2),16),parseInt(hex.substring(2,4),16),parseInt(hex.substring(4,6),16)];}
+    function rgbToHex(r,g,b){return "#"+[r,g,b].map(x=>x.toString(16).padStart(2,'0')).join('');}
+    const rgb1 = hexToRgb(c1), rgb2 = hexToRgb(c2);
+    const mixed = rgb1.map((v,i)=>Math.floor((v+rgb2[i])/2));
+    return rgbToHex(...mixed);
+  }
+
+  function updateGoal(){
+    goalEl.textContent = `Global goal: ${fishCount} / ${globalGoal} fish bred`;
+    if(fishCount>=globalGoal) goalEl.textContent+=' 🎉 Goal reached!';
+  }
+
+  document.getElementById('resetBtn').addEventListener('click',()=>{
+    tank.innerHTML='';
+    fishCount=0;
+    goalEl.textContent=`Global goal: ${fishCount} / ${globalGoal} fish bred`;
+    for(let i=0;i<5;i++) createFish();
+  });
+
+  for(let i=0;i<5;i++) createFish();
+
+</script>
 </body>
 </html>
